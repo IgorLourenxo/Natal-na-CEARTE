@@ -29,6 +29,9 @@
     {{-- Loader, that disappears when the page is ready (through JQuery) --}}
     @include('includes.loader')
 
+    {{-- Header --}}
+    @include('includes.header')
+
     {{-- Content --}}
     @yield('content')
 

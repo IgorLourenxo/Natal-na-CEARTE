@@ -9,10 +9,11 @@ class PagesController extends Controller
 {
     function index()
     {
-        if (Auth::check()) {
-            return view('pages.index');
-        } else {
-            return view('welcome');
-        }
+        return view('welcome');
+    }
+
+    function message()
+    {
+        return view('pages.message');
     }
 }

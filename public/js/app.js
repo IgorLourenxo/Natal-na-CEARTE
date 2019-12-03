@@ -11434,33 +11434,38 @@ $(window).on("load", function () {
 /***/ (function(module, exports) {
 
 var totalMessages = $('#messagesContainer .message').length;
-var i = 1; // "Manually" show the first message
+var i = 1; // Basically, this will only work in the page that shows the messages
 
-$("#".concat(i)).show(); // The function that will "slideshow" all messages
+if (totalMessages > 0) {
+  // The function that will "slideshow" all messages
+  var myLoop = function myLoop() {
+    // We set a timeout of 10 seconds
+    setTimeout(function () {
+      // Hide the previous message
+      $("#".concat(i)).hide();
+      console.log("Previous message (".concat(i, ") hidden...")); // Show the current message
 
-function myLoop() {
-  // We set a timeout of 10 seconds
-  setTimeout(function () {
-    // Hide the previous message
-    $("#".concat(i)).hide();
-    console.log("Previous message (".concat(i, ") hidden...")); // Show the current message
+      $("#".concat(i + 1)).fadeIn();
+      console.log("Current message (".concat(i + 1, ") shown!")); // Increment the counter
 
-    $("#".concat(i + 1)).fadeIn();
-    console.log("Current message (".concat(i + 1, ") shown!")); // Increment the counter
+      i++; // If the counter is inferior to the total number of messages loaded...
 
-    i++; // If the counter is inferior to the total number of messages loaded...
+      if (i <= totalMessages) {
+        // ... it will repeat the function
+        myLoop();
+      } // Otherwise...
+      else {
+          // We refresh the page
+          location.reload(true);
+        }
+    }, 10000);
+  }; // The first time we have to call the function "manually"
+  // myLoop();
 
-    if (i <= totalMessages) {
-      // ... it will repeat the function
-      myLoop();
-    } // Otherwise...
-    else {
-        // We refresh the page
-        location.reload(true);
-      }
-  }, 10000);
-} // The first time we have to call the function "manually"
-// myLoop();
+
+  // "Manually" show the first message
+  $("#".concat(i)).show();
+}
 
 /***/ }),
 

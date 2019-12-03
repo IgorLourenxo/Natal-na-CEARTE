@@ -13,7 +13,8 @@
 
 // Handling routes
 Route::get('/', 'PagesController@index');
+Route::get('/mensagem', 'PagesController@message');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
