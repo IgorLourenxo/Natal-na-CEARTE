@@ -20,11 +20,11 @@ body {
 }
 
 .bg-image {
-    background-image: url('/img/static/Phone Wallpaper.png');
+    background-image: url("/img/static/Phone Wallpaper.png");
     background-size: cover;
     background-position: center;
 }
 
 .text-border {
-    text-shadow: -1px 0 #ED173A, 0 1px #ED173A, 1px 0 #ED173A, 0 -1px #ED173A;
+    text-shadow: -1px 0 #ed173a, 0 1px #ed173a, 1px 0 #ed173a, 0 -1px #ed173a;
 }

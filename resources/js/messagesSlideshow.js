@@ -1,16 +1,15 @@
-var totalMessages = $('#messagesContainer .message').length;
+var totalMessages = $("#messagesContainer .message").length;
 var i = 1;
 
 // Basically, this will only work in the page that shows the messages
 if (totalMessages > 0) {
-
     // "Manually" show the first message
     $(`#${i}`).show();
 
     // The function that will "slideshow" all messages
     function myLoop() {
         // We set a timeout of 10 seconds
-        setTimeout(function () {
+        setTimeout(function() {
             // Hide the previous message
             $(`#${i}`).hide();
             console.log(`Previous message (${i}) hidden...`);
@@ -22,7 +21,7 @@ if (totalMessages > 0) {
             i++;
 
             // If the counter is inferior to the total number of messages loaded...
-            if (i <= (totalMessages)) {
+            if (i <= totalMessages) {
                 // ... it will repeat the function
                 myLoop();
             }
@@ -31,9 +30,9 @@ if (totalMessages > 0) {
                 // We refresh the page
                 location.reload(true);
             }
-        }, 10000)
+        }, 10000);
     }
 
     // The first time we have to call the function "manually"
-    // myLoop();
+    myLoop();
 }

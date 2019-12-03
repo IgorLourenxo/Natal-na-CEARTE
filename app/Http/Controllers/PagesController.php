@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Message;
 
 class PagesController extends Controller
 {
-    function index()
+    public function index()
     {
-        return view('welcome');
+        $messages = Message::orderBy('updated_at', 'desc')->where('approved', 1)->get();
+        $total = Message::count();
+        return view('welcome')->with('messages', $messages)->with('total', $total);
     }
 
-    function message()
+    public function message()
     {
         return view('pages.message');
     }

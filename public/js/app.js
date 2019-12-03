@@ -11433,7 +11433,7 @@ $(window).on("load", function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var totalMessages = $('#messagesContainer .message').length;
+var totalMessages = $("#messagesContainer .message").length;
 var i = 1; // Basically, this will only work in the page that shows the messages
 
 if (totalMessages > 0) {
@@ -11460,11 +11460,11 @@ if (totalMessages > 0) {
         }
     }, 10000);
   }; // The first time we have to call the function "manually"
-  // myLoop();
 
 
   // "Manually" show the first message
   $("#".concat(i)).show();
+  myLoop();
 }
 
 /***/ }),

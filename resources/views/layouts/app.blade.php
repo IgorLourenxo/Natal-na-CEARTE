@@ -24,7 +24,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-neutral">
+<body class="bg-gray-200">
 
     {{-- Loader, that disappears when the page is ready (through JQuery) --}}
     @include('includes.loader')

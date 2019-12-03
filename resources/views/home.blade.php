@@ -2,28 +2,43 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex items-center">
-    <div class="md:w-1/2 md:mx-auto">
-
-        @if (session('status'))
-        <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4"
-            role="alert">
-            {{ session('status') }}
+<div class="bg-white mt-24">
+    <div class="container mx-auto">
+        <h1 class="text-center font-black text-2xl">Dashboard</h1>
+        <h2 class="text-center font-light text-xl">Verificar mensagens</h2>
+        <hr class="my-4">
+        @if (count($messages) > 0)
+        @foreach ($messages as $message)
+        <div class="bg-light px-4 py-2 rounded-lg mx-4">
+            <p><strong>Nome:</strong> {{$message->name}}</p>
+            <br>
+            <p><strong>Curso:</strong> {{$message->course}}</p>
+            <br>
+            <p class="break-words"><strong>Mensagem:</strong> {{$message->message}}</p>
+            <div class="clearfix my-4 mx-2">
+                <form class="float-left" method="POST" action="{{action('MessagesController@update', $message->id)}}">
+                    @method('PUT')
+                    @csrf
+                    <button class="rounded-lg px-4 py-2 bg-green-500 text-light" type="submit">Aprovar!</button>
+                </form>
+                <form class="float-right" method="POST" action="{{action('MessagesController@destroy', $message->id)}}">
+                    @method('DELETE')
+                    @csrf
+                    <button class="rounded-lg px-4 py-2 bg-red-600 text-light" type="submit">APAGAR!</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        @endforeach
+        @else
+        <div class="text-center">
+            <p class="font-light">Não existem mensagens a precisar de aprovação!</p>
+        </div>
+        <div class="text-center">
+            <button onclick="location.reload()"
+                class="bg-blue-400 px-4 py-2 rounded-full text-light my-4">Refresh</button>
         </div>
         @endif
-
-        <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
-
-            <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
-                Dashboard
-            </div>
-
-            <div class="w-full p-6">
-                <p class="text-gray-700">
-                    You are logged in!
-                </p>
-            </div>
-        </div>
     </div>
 </div>
 @endsection
