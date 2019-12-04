@@ -15,7 +15,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- Title --}}
-    <title>Laravel w/ TailwindCSS</title>
+    <title>Natal CEARTE</title>
 
     {{-- Description --}}
     <meta name="description" content="Description of this website.">

@@ -23,13 +23,18 @@ body {
     /* background-image: url("/img/static/Phone Wallpaper.png"); */
     /* background-image: url("/img/static/Wallpaper Option 1.png"); */
     /* background-image: url("/img/static/Wallpaper Option 2.png"); */
-    background-image: url("/img/static/Wallpaper Option 3.png");
+    /* background-image: url("/img/static/Wallpaper Option 3.png"); */
+    background-image: url("/img/static/Pattern.png");
 
     /* Comment below if it is a pattern */
-    /* background-size: cover; */
+    background-size: cover;
     background-position: center;
 }
 
 .text-border {
     text-shadow: -1px 0 #ed173a, 0 1px #ed173a, 1px 0 #ed173a, 0 -1px #ed173a;
+}
+
+.h-30vh {
+    height: 30vh;
 }
