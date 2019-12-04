@@ -8,7 +8,7 @@ if (totalMessages > 0) {
 
     // The function that will "slideshow" all messages
     function myLoop() {
-        // We set a timeout of 10 seconds
+        // We set a timeout of 15 seconds
         setTimeout(function() {
             // Hide the previous message
             $(`#${i}`).hide();
@@ -30,7 +30,7 @@ if (totalMessages > 0) {
                 // We refresh the page
                 location.reload(true);
             }
-        }, 10000);
+        }, 15000);
     }
 
     // The first time we have to call the function "manually"

@@ -20,8 +20,13 @@ body {
 }
 
 .bg-image {
-    background-image: url("/img/static/Phone Wallpaper.png");
-    background-size: cover;
+    /* background-image: url("/img/static/Phone Wallpaper.png"); */
+    /* background-image: url("/img/static/Wallpaper Option 1.png"); */
+    /* background-image: url("/img/static/Wallpaper Option 2.png"); */
+    background-image: url("/img/static/Wallpaper Option 3.png");
+
+    /* Comment below if it is a pattern */
+    /* background-size: cover; */
     background-position: center;
 }
 

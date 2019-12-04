@@ -11439,7 +11439,7 @@ var i = 1; // Basically, this will only work in the page that shows the messages
 if (totalMessages > 0) {
   // The function that will "slideshow" all messages
   var myLoop = function myLoop() {
-    // We set a timeout of 10 seconds
+    // We set a timeout of 15 seconds
     setTimeout(function () {
       // Hide the previous message
       $("#".concat(i)).hide();
@@ -11458,7 +11458,7 @@ if (totalMessages > 0) {
           // We refresh the page
           location.reload(true);
         }
-    }, 10000);
+    }, 15000);
   }; // The first time we have to call the function "manually"
 
 
