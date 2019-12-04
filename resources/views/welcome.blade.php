@@ -2,6 +2,9 @@
 
 @section('content')
 
+{{-- Header --}}
+@include('includes.header')
+
 {{-- Main Content --}}
 <main id="messagesContainer" class="h-screen flex justify-center items-center | bg-image">
     @if (count($messages) > 0)

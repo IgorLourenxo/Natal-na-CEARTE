@@ -2,9 +2,6 @@
 
 @section('content')
 
-{{-- Header --}}
-@include('includes.header')
-
 {{-- Main Content --}}
 <main class="h-screen flex justify-center items-center | bg-image">
     <div class="container | w-full rounded-lg | mx-4 sm:mx-12 lg:mx-24 xl:mx-32 p-4 | bg-light">

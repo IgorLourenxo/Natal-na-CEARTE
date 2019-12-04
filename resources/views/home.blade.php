@@ -2,7 +2,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-white mt-24">
+{{-- Header --}}
+@include('includes.header')
+
+<div class="bg-white mt-48">
     <div class="container mx-auto">
         <h1 class="text-center font-black text-2xl">Dashboard</h1>
         <h2 class="text-center font-light text-xl">Verificar mensagens</h2>
